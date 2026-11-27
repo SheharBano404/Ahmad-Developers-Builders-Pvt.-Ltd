@@ -419,7 +419,7 @@ body:has(.approach-tour[data-presenting]) :is(.site-header,.floating-contact) { 
 .modal-top h2 { font-size:1.42rem; }
 .modal-top .icon-button { flex-shrink:0; }
 .modal .notice { margin-block:9px; }
-.modal-actions { display:flex; flex-wrap:wrap; gap:8px; margin-top:13px; }
+.modal-actions { display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin-top:13px; }
 .currency-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:9px; margin-top:13px; }
 .currency-grid label { display:flex; align-items:center; gap:9px; padding:9px 10px; min-height:67px; border:1px solid var(--line); border-radius:5px; cursor:pointer; }
 .currency-grid label.selected { border-color:var(--nav-blue); background:#eaf2fc; }
