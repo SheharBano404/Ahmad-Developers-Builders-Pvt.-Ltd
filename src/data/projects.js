@@ -1,0 +1,22 @@
+// Project details come from the ADB company profile. Add/edit projects here.
+export const projects = [
+  { id: 'regal-city-development', name: 'Regal City Development', tag: 'Town development', location: 'Lahore-Faisalabad By-pass Road, Sheikhupura', image: '',
+    short: 'Development works in Regal City Sheikhupura, on the Lahore-Faisalabad By-pass Road.',
+    description: 'In October 2021 ADB started development work in Regal City Sheikhupura after the official management handed over development activities to ADB. Per the company profile, the maximum development work of Regal City has been completed under ADB.',
+    details: ['Started: October 2021', 'Location: Regal City, Lahore-Faisalabad By-pass Road, Sheikhupura'], images: [] },
+  { id: 'adb-heights', name: 'ADB Heights', tag: 'Multizone Complex', image: '/adb/heights.jpg',
+    short: 'An international-standard multizone complex with commercial offices and apartments.',
+    description: 'A multizone complex including commercial offices, single, double and three-bed apartments, male and female fitness gyms and a rooftop restaurant under a multinational restaurant brand, with fire alarms and emergency exits.',
+    details: ['Type A: 1442 sq ft, 4-bed luxury apartment', 'Type B: 1087 sq ft, 3-bed luxury apartment', 'Type C: 967 sq ft, 2-bed luxury apartment', 'Balcony, drawing, dining, kitchen, powder room', 'Lifts, parking, fitness gym, kids play area'], images: [] },
+  { id: 'kanal-adb-villa', name: 'Kanal ADB Villa', tag: 'Villa', image: '',
+    short: '1 kanal villas shown with 3D elevations and grey-structure progress.',
+    description: 'Kanal villa designs presented with 3D elevations alongside grey-structure construction progress.', details: ['Further details to be confirmed by ADB'], images: [] },
+  { id: '2-kanal-adb-royal-classic-villa', name: '2 Kanal ADB Royal Classic Villa', tag: 'Villa', image: '',
+    short: 'Fully furnished classic villas on 3-side corner plots.',
+    description: 'ADB Royal Villas are fully furnished, on 3-side corner plots, with a double-height entrance and double-height staircase in a classic design. The aim is international-standard luxury villas in Regal City and across Pakistan.',
+    details: ['Fully furnished', '3-side corner plots', 'Double-height entrance and staircase'], images: [] },
+  { id: 'adb-100-homes', name: 'ADB 100 Homes', tag: 'Residential programme', location: 'Regal City, Sheikhupura', image: '',
+    short: 'A mega project of 100 homes in Regal City Sheikhupura.',
+    description: 'ADB is constructing 100 homes in Regal City Sheikhupura. Some grey-structure homes have been completed.',
+    details: ['100 homes, Regal City Sheikhupura', 'Grey-structure homes completed', 'Warranty and pricing: confirm with ADB'], images: [] },
+]

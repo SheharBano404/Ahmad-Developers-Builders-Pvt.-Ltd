@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ahmad Developers & Builders Pvt. Ltd.</title>
+<meta name="description" content="Ahmad Developers & Builders (ADB): real estate development and construction in Regal City Sheikhupura and across Pakistan." />
+<meta property="og:title" content="Ahmad Developers & Builders Pvt. Ltd." />
+<meta property="og:description" content="Real estate development, construction and property sales across Pakistan." />
+<meta property="og:image" content="/adb/heights.jpg" /><meta property="og:type" content="website" />
+<link rel="icon" href="/adb/adb-mark.png" />
+<style>
+  #site-intro[hidden] { display:none }
+  #site-intro { position:fixed; inset:0; z-index:1000; pointer-events:none; background:#081b32 url('/adb/hero-frames/blueprint.jpg') center / contain no-repeat; }
+  #site-intro[data-hero-ready] { background:none; }
+  .site-intro-mark { position:absolute; inset:0; display:grid; place-items:center; background:radial-gradient(ellipse at center,#090804,#020202 62%); transition:opacity var(--logo-fade-duration) ease-in-out; }
+  #site-intro img { width:min(240px,64vw,52svh); height:auto; opacity:0; mix-blend-mode:screen; transition:opacity .2s ease-out; }
+  #site-intro[data-logo-ready] img { opacity:1; animation:site-intro-zoom var(--logo-duration) ease-in-out both; }
+  #site-intro[data-leaving] .site-intro-mark { opacity:0; }
+  @media (min-width:769px) {
+    #site-intro { background-size:cover; background-position:50% 52%; }
+  }
+  @keyframes site-intro-zoom {
+    0% { transform:scale(.24); }
+    54% { transform:scale(1.18); }
+    78%,100% { transform:scale(1.11); }
+  }
+  @media (prefers-reduced-motion:reduce) {
+    #site-intro:not([data-hero-ready]) { background-image:url('/adb/hero-frames/final-enhanced.jpg'); }
+    .site-intro-mark, #site-intro img { transition:none; }
+    #site-intro[data-logo-ready] img { animation:none; }
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+</head><body>
+<div id="site-intro" hidden aria-hidden="true"><div class="site-intro-mark"><img data-src="/adb/hero-frames/intro-logo.png" width="240" height="240" fetchpriority="high" alt="" /></div></div>
+<script>
+  (() => {
+    const intro = document.getElementById('site-intro')
+    if (location.pathname !== '/' || location.hash) {
+      intro.remove()
+      return
+    }
+
+    const logo = intro.querySelector('img')
+    const loaderDuration = 3000
+    const fadeDuration = 520
+    const logoDuration = loaderDuration - fadeDuration
+    intro.style.setProperty('--logo-duration', `${logoDuration}ms`)
+    intro.style.setProperty('--logo-fade-duration', `${fadeDuration}ms`)
+    intro.hidden = false
+
+    let logoFinished = false
+    const release = () => {
+      if (!logoFinished || !intro.hasAttribute('data-hero-ready')) return
+      clearTimeout(fallback)
+      intro.remove()
+    }
+    const dismiss = () => {
+      intro.setAttribute('data-leaving', '')
+      setTimeout(() => {
+        logoFinished = true
+        release()
+      }, fadeDuration)
+    }
+    const fallback = setTimeout(() => intro.remove(), 7500)
+    intro.addEventListener('hero-ready', () => {
+      intro.setAttribute('data-hero-ready', '')
+      release()
+    }, { once:true })
+
+    logo.src = logo.dataset.src
+    logo.decode().then(() => {
+      intro.setAttribute('data-logo-ready', '')
+      const zoom = logo.getAnimations().find((animation) => animation.animationName === 'site-intro-zoom')
+      if (zoom) zoom.finished.then(dismiss, dismiss)
+      else setTimeout(dismiss, logoDuration)
+    }, dismiss)
+  })()
+</script>
+<div id="root"></div><script type="module" src="/src/main.jsx"></script></body></html>
