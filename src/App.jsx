@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import ContactTools from './components/ContactTools'
+import ScrollReveal from './components/ScrollReveal'
 import Home from './pages/Home'
 import About from './pages/About'
 import Projects from './pages/Projects'
@@ -24,7 +25,7 @@ export default function App() {
     <ContactTools>
       <div className="public-scrollport" id="public-scrollport">
         <a href="#main" className="skip-link">Skip to content</a>
-        <Header /><HashScroll />
+        <Header /><HashScroll /><ScrollReveal />
         <main id="main">
           <Routes>
             <Route path="/" element={<Home />} /><Route path="/about" element={<About />} />
